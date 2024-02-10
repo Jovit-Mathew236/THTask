@@ -17,32 +17,55 @@ document.addEventListener("DOMContentLoaded", function () {
   if (themeSwitcher) {
     themeSwitcher.addEventListener("click", switchTheme);
   }
+
+  // Add event listeners to buttons
+  document.getElementById("btn60").addEventListener("click", function () {
+    sec = parseInt(this.getAttribute("data-sec")); // Update sec
+    resetTimer(); // Reset timer
+  });
+
+  document.getElementById("btn30").addEventListener("click", function () {
+    sec = parseInt(this.getAttribute("data-sec")); // Update sec
+    resetTimer(); // Reset timer
+  });
+
+  document.getElementById("btn10").addEventListener("click", function () {
+    sec = parseInt(this.getAttribute("data-sec")); // Update sec
+    resetTimer(); // Reset timer
+  });
 });
 
-let number = document.getElementById("number").innerHTML;
+let number = 0;
 let btn = document.getElementById("btn");
 let sec = 60;
 let timerInterval;
 
 function timer() {
-    timerInterval = setInterval(() => {
-        sec--;
-        if (sec >= 0) {
-            document.getElementById("timer").innerHTML = sec;
-        } else {
-            clearInterval(timerInterval);
-            alert("Time's up!");
-        }
-    }, 1000);
+  timerInterval = setInterval(() => {
+    sec--;
+    if (sec >= 0) {
+      document.getElementById("timer").innerHTML = sec;
+    } else {
+      clearInterval(timerInterval);
+      alert("Time's up!");
+      resetTimer(); // Reset timer when time is up
+    }
+  }, 1000);
 }
 
 // Add event listener to the button
 document.getElementById("btn").addEventListener("click", function () {
-    // If the timer is not already running, start the timer
-    if (!timerInterval) {
-        timer();
-    }
-    // Increment the number of clicks
-    number++;
-    document.getElementById("number").innerHTML = number;
+  // If the timer is not already running, start the timer
+  if (!timerInterval) {
+    timer();
+  }
+  // Increment the number of clicks
+  number++;
+  document.getElementById("number").innerHTML = number;
 });
+
+// Function to reset the timer
+function resetTimer() {
+  clearInterval(timerInterval); // Clear current timer interval
+  document.getElementById("timer").innerHTML = sec; // Reset timer display
+}
