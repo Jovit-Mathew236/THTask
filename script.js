@@ -21,19 +21,19 @@ document.addEventListener("DOMContentLoaded", function () {
   // Add event listeners to buttons
   document.getElementById("btn60").addEventListener("click", function () {
     sec = parseInt(this.getAttribute("data-sec")); // Update sec
-    document.getElementById("head").innerHTML = "One Minute";
+    document.getElementById("head").innerHTML = "One Minute ";
     resetTimer(); // Reset timer
   });
 
   document.getElementById("btn30").addEventListener("click", function () {
     sec = parseInt(this.getAttribute("data-sec")); // Update sec
-    document.getElementById("head").innerHTML = "30 Seconds";
+    document.getElementById("head").innerHTML = "30 Seconds ";
     resetTimer(); // Reset timer
   });
 
   document.getElementById("btn10").addEventListener("click", function () {
     sec = parseInt(this.getAttribute("data-sec")); // Update sec
-    document.getElementById("head").innerHTML = "10 Seconds";
+    document.getElementById("head").innerHTML = "10 Seconds ";
     resetTimer(); // Reset timer
   });
 });
