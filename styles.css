@@ -87,6 +87,7 @@ body {
     border: 0.5px solid #ff00e8bf;
     border-radius: 6px;
     padding: 5px 10px;
-    background: #ffbff9;
+    background: #ffbff9bd;
     cursor: pointer;
+    color: var(--txt-color);
 }
