@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #121212;
+    --txt-color: #fff;
+    --icon: url(./theme.png);
+}
+
+/* When the theme is set to light */
+html[theme="light"] {
+    --bg-color: #fff;
+    --txt-color: #121212;
+    --icon: url(./theme.png);
+}
+
+/* When the theme is set to dark */
+html[theme="dark"] {
+    --bg-color: #121212;
+    --txt-color: #fff;
+    --icon: url(./themewhite.png);
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--txt-color);
+}
+
+body {
+    transition-duration: 0.3s;
+    transition-property: var(--bg-color), var(--txt-color);
+    font-family: 'Poppins', sans-serif;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+#theme-switcher {
+    border: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    background: var(--icon) no-repeat center center;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+#btn {
+    background-color: #ca45be;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 110px;
+    opacity: 0.9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#btn:hover {
+    opacity: 1;
+}
