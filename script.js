@@ -22,8 +22,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
 let number = document.getElementById("number").innerHTML;
 let btn = document.getElementById("btn");
+let sec = 60;
+let timerInterval;
 
-btn.addEventListener("click", function () {
-  number = parseInt(number) + 1;
-  document.getElementById("number").innerHTML = number;
+function timer() {
+    timerInterval = setInterval(() => {
+        sec--;
+        if (sec >= 0) {
+            document.getElementById("timer").innerHTML = sec;
+        } else {
+            clearInterval(timerInterval);
+            alert("Time's up!");
+        }
+    }, 1000);
+}
+
+// Add event listener to the button
+document.getElementById("btn").addEventListener("click", function () {
+    // If the timer is not already running, start the timer
+    if (!timerInterval) {
+        timer();
+    }
+    // Increment the number of clicks
+    number++;
+    document.getElementById("number").innerHTML = number;
 });

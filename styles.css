@@ -78,3 +78,7 @@ body {
 #btn:hover {
     opacity: 1;
 }
+
+.countdown{
+    display: flex;
+}
