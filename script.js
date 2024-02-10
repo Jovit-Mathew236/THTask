@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Your JavaScript code here
   let theme =
     localStorage.getItem("theme") ||
     (window.matchMedia("(prefers-color-scheme: dark)").matches

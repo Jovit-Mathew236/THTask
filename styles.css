@@ -79,6 +79,14 @@ body {
     opacity: 1;
 }
 
-.countdown{
+.countdown {
     display: flex;
+}
+
+.buttons button {
+    border: 0.5px solid #ff00e8bf;
+    border-radius: 6px;
+    padding: 5px 10px;
+    background: #ffbff9;
+    cursor: pointer;
 }
